@@ -1,8 +1,9 @@
 import os
+
 ##
 rootdir =os.path.normpath('C:/Users/Z3 Demo/Desktop/KSI-Arrow')
-look_for  = "NAND:  1024 MiB"
-##look_for  = "NAND:  256 MiB"
+##look_for  = "NAND:  1024 MiB"
+look_for  = "NAND:  256 MiB"
 count=0
 
 for subdir, dirs, files in os.walk(rootdir):
@@ -13,8 +14,8 @@ for subdir, dirs, files in os.walk(rootdir):
             f=open(os.path.join(subdir, file),'r')
             text=f.read()
             if text.find(look_for)!=-1:
-##                print "not passed"
-##                print os.path.join(subdir, file)
+                print "not passed"
+                print os.path.join(subdir, file)
                 count=count+1
             
 
